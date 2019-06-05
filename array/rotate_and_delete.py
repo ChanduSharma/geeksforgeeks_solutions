@@ -1,17 +1,17 @@
-def rotate_right_by_one(arr, length):
-    temp = arr[length - 1]
-    print(arr)
-    for i in range(length-1,-1,-1):
-        arr[i] = arr[i-1]
-        print(arr)
-    arr[0] = temp
-    
-    
 test_cases = int(input())
 
-for i in range(test_cases):
-    length = int(input())
-    arr = list(map(int, input().split()))
-    rotate_right_by_one(arr,length)
-    print(arr)
-    print(arr[0])
+for _ in range(test_cases):
+    n = int(input())
+    arr = list(map(int,input().split()))
+    if n == 1: 
+        print(arr[0])
+    elif n%2 == 1:
+        indices = n - 3
+        indices = indices//4
+        indices = indices + 3
+        print(arr[indices-1])
+    else:
+        indices = n - 2
+        indices = indices//4
+        indices = indices + 2
+        print(arr[indices-1])
